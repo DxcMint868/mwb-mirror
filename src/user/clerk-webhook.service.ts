@@ -21,7 +21,9 @@ export class ClerkWebhookService {
             this.logger.log(`User created successfully: ${user.id}`);
             return { success: true, userId: user.id };
         } catch (error) {
-            this.logger.error(`Failed to create user: ${error.message}`);
+            const errorMessage =
+                error instanceof Error ? error.message : String(error);
+            this.logger.error(`Failed to create user: ${errorMessage}`);
             throw error;
         }
     }
@@ -36,7 +38,9 @@ export class ClerkWebhookService {
 
             return { success: true };
         } catch (error) {
-            this.logger.error(`Failed to delete user: ${error.message}`);
+            const errorMessage =
+                error instanceof Error ? error.message : String(error);
+            this.logger.error(`Failed to delete user: ${errorMessage}`);
             throw error;
         }
     }

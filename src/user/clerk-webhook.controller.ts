@@ -1,4 +1,4 @@
-import { Controller, Post, Body, UseGuards, Req } from "@nestjs/common";
+import { Controller, Post, Body, UseGuards } from "@nestjs/common";
 import { ClerkWebhookGuard } from "./clerk-webhook.guard";
 import { ClerkWebhookService } from "./clerk-webhook.service";
 import { ClerkWebhookEventDto } from "./dto/clerk-webhook-event.dto";
