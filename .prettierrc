@@ -1,4 +1,14 @@
 {
-  "singleQuote": true,
-  "trailingComma": "all"
+    "singleQuote": false,
+    "trailingComma": "all",
+    "tabWidth": 4,
+    "overrides": [
+        {
+            "files": "*.json",
+            "options": {
+                "tabWidth": 2,
+                "parser": "json"
+            }
+        }
+    ]
 }
