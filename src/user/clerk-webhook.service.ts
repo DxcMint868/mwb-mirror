@@ -1,6 +1,6 @@
-import { Injectable, Logger } from "@nestjs/common";
+import { BadRequestException, Injectable, Logger } from "@nestjs/common";
 import { PrismaService } from "@/src/prisma/prisma.service";
-import { ClerkWebhookEventDto } from "./dto/clerk-webhook-event.dto";
+import { WebhookEvent } from "@clerk/backend";
 
 @Injectable()
 export class ClerkWebhookService {
@@ -8,8 +8,13 @@ export class ClerkWebhookService {
 
     constructor(private readonly prisma: PrismaService) {}
 
-    async handleUserCreated(userData: ClerkWebhookEventDto["data"]) {
+    async handleUserCreated(userData: WebhookEvent["data"]) {
         this.logger.log(`Creating user: ${userData.id}`);
+
+        if (!userData.id) {
+            this.logger.error("Clerk user data is missing 'id' field");
+            throw new BadRequestException("Missing user ID in webhook data");
+        }
 
         try {
             const user = await this.prisma.user.create({
@@ -28,7 +33,7 @@ export class ClerkWebhookService {
         }
     }
 
-    async handleUserDeleted(userData: ClerkWebhookEventDto["data"]) {
+    async handleUserDeleted(userData: WebhookEvent["data"]) {
         this.logger.log(`Deleting user: ${userData.id}`);
 
         try {
