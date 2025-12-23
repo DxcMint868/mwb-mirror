@@ -20,3 +20,12 @@ model User {
   createdAt    DateTime @default(now()) @map("created_at")
   updatedAt    DateTime @updatedAt @map("updated_at")
 }
+
+model Artist {
+  id          String   @id @default(cuid())
+  fullName    String   @map("full_name")
+  avatarUrl   String?  @map("avatar_url")
+  specialties String[]
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+}
