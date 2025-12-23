@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { AuthModule } from './auth/auth.module';
-import { UserModule } from './user/user.module';
-import { PrismaModule } from './prisma/prisma.module';
-import { HealthModule } from './health/health.module';
-import { ArtistModule } from './artist/artist.module';
+import { AppController } from '@/src/app.controller';
+import { AppService } from '@/src/app.service';
+import { AuthModule } from '@/src/auth/auth.module';
+import { UserModule } from '@/src/user/user.module';
+import { PrismaModule } from '@/src/prisma/prisma.module';
+import { HealthModule } from '@/src/health/health.module';
+import { ArtistModule } from '@/src/artist/artist.module';
 
 @Module({
   imports: [
