@@ -1,8 +1,8 @@
 import { Controller, Get, Param, UseGuards } from '@nestjs/common';
-import { ArtistService } from './artist.service';
-import { ClerkAuthGuard } from '../auth/clerk-auth.guard';
+import { ArtistService } from '@/src/artists/artist.service';
+import { ClerkAuthGuard } from '@/src/auth/clerk-auth.guard';
 
-@Controller('artist')
+@Controller('artists')
 export class ArtistController {
   constructor(private readonly artistService: ArtistService) {}
 
