@@ -1,5 +1,4 @@
-import { Artist } from '@/generated/prisma/client';
-import { PrismaService } from '../prisma/prisma.service';
+import { PrismaService } from '@/src/prisma/prisma.service';
 import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 @Injectable()
 export class ArtistService {
