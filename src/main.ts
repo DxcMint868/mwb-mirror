@@ -9,6 +9,10 @@ async function bootstrap() {
     bodyParser: false,
   });
 
+  app.enableCors({
+    origin: process.env.FRONTEND_URL ?? 'http://localhost:5173',
+  });
+
   app.use('/clerk-webhook', raw({ type: 'application/json' }));
   await app.listen(process.env.PORT ?? 3000);
 }
