@@ -29,3 +29,19 @@ model Artist {
   createdAt   DateTime @default(now()) @map("created_at")
   updatedAt   DateTime @updatedAt @map("updated_at")
 }
+
+model Card {
+  id          String   @id @default(cuid())
+  date        DateTime @map("date") @db.Date
+  periodStart DateTime @map("period_start") @db.Timestamptz
+  periodEnd   DateTime @map("period_end") @db.Timestamptz
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+}
+
+model CardContent {
+  id           String @id @default(cuid())
+  cardId       String @map("card_id")
+  languageCode String @map("language_code") // ISO 639-1 code
+  contentJson  Json   @map("content_json")
+}
