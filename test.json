@@ -1,0 +1,337 @@
+{
+  "id": "sub_1SppblPFcI0F05No1UD9nwqD",
+  "object": "subscription",
+  "application": "ca_TkmxIvytoZxn4y5JIua3SBMhIEBXAnZo",
+  "application_fee_percent": null,
+  "automatic_tax": {
+    "disabled_reason": null,
+    "enabled": false,
+    "liability": null
+  },
+  "billing_cycle_anchor": 1768479901,
+  "billing_cycle_anchor_config": null,
+  "billing_mode": {
+    "flexible": {
+      "proration_discounts": "included"
+    },
+    "type": "flexible",
+    "updated_at": 1768479901
+  },
+  "billing_thresholds": null,
+  "cancel_at": null,
+  "cancel_at_period_end": false,
+  "canceled_at": null,
+  "cancellation_details": {
+    "comment": null,
+    "feedback": null,
+    "reason": null
+  },
+  "collection_method": "charge_automatically",
+  "created": 1768479901,
+  "currency": "thb",
+  "customer": "cus_TnQEPLjKRv0xLG",
+  "customer_account": null,
+  "days_until_due": null,
+  "default_payment_method": "pm_1SppO8PFcI0F05NoRuQAjvvn",
+  "default_source": null,
+  "default_tax_rates": [],
+  "description": null,
+  "discounts": [],
+  "ended_at": null,
+  "invoice_settings": {
+    "account_tax_ids": null,
+    "issuer": {
+      "type": "self"
+    }
+  },
+  "items": {
+    "object": "list",
+    "data": [
+      {
+        "id": "si_TnQSrgdCfZBRjM",
+        "object": "subscription_item",
+        "billing_thresholds": null,
+        "created": 1768479902,
+        "current_period_end": 1771158301,
+        "current_period_start": 1768479901,
+        "discounts": [],
+        "metadata": {},
+        "plan": {
+          "id": "price_1SpZuDPFcI0F05No0akAUH5f",
+          "object": "plan",
+          "active": true,
+          "amount": 19800,
+          "amount_decimal": "19800",
+          "billing_scheme": "per_unit",
+          "created": 1768419541,
+          "currency": "thb",
+          "interval": "month",
+          "interval_count": 1,
+          "livemode": false,
+          "metadata": {
+            "packageType": "MONTHLY"
+          },
+          "meter": null,
+          "nickname": null,
+          "product": "prod_TnAEOtLA1PusF8",
+          "tiers_mode": null,
+          "transform_usage": null,
+          "trial_period_days": null,
+          "usage_type": "licensed"
+        },
+        "price": {
+          "id": "price_1SpZuDPFcI0F05No0akAUH5f",
+          "object": "price",
+          "active": true,
+          "billing_scheme": "per_unit",
+          "created": 1768419541,
+          "currency": "thb",
+          "custom_unit_amount": null,
+          "livemode": false,
+          "lookup_key": null,
+          "metadata": {
+            "packageType": "MONTHLY"
+          },
+          "nickname": null,
+          "product": "prod_TnAEOtLA1PusF8",
+          "recurring": {
+            "interval": "month",
+            "interval_count": 1,
+            "meter": null,
+            "trial_period_days": null,
+            "usage_type": "licensed"
+          },
+          "tax_behavior": "unspecified",
+          "tiers_mode": null,
+          "transform_quantity": null,
+          "type": "recurring",
+          "unit_amount": 19800,
+          "unit_amount_decimal": "19800"
+        },
+        "quantity": 1,
+        "subscription": "sub_1SppblPFcI0F05No1UD9nwqD",
+        "tax_rates": []
+      }
+    ],
+    "has_more": false,
+    "total_count": 1,
+    "url": "/v1/subscription_items?subscription=sub_1SppblPFcI0F05No1UD9nwqD"
+  },
+  "latest_invoice": {
+    "id": "in_1SppblPFcI0F05No8GSpqwG4",
+    "object": "invoice",
+    "account_country": "TH",
+    "account_name": "muwow.co",
+    "account_tax_ids": null,
+    "amount_due": 19800,
+    "amount_overpaid": 0,
+    "amount_paid": 0,
+    "amount_remaining": 19800,
+    "amount_shipping": 0,
+    "application": "ca_TkmxIvytoZxn4y5JIua3SBMhIEBXAnZo",
+    "attempt_count": 0,
+    "attempted": false,
+    "auto_advance": false,
+    "automatic_tax": {
+      "disabled_reason": null,
+      "enabled": false,
+      "liability": null,
+      "provider": null,
+      "status": null
+    },
+    "automatically_finalizes_at": null,
+    "billing_reason": "subscription_create",
+    "collection_method": "charge_automatically",
+    "created": 1768479901,
+    "currency": "thb",
+    "custom_fields": null,
+    "customer": "cus_TnQEPLjKRv0xLG",
+    "customer_account": null,
+    "customer_address": null,
+    "customer_email": null,
+    "customer_name": null,
+    "customer_phone": null,
+    "customer_shipping": null,
+    "customer_tax_exempt": "none",
+    "customer_tax_ids": [],
+    "default_payment_method": null,
+    "default_source": null,
+    "default_tax_rates": [],
+    "description": null,
+    "discounts": [],
+    "due_date": null,
+    "effective_at": 1768479901,
+    "ending_balance": 0,
+    "footer": null,
+    "from_invoice": null,
+    "hosted_invoice_url": "https://invoice.stripe.com/i/acct_1SnJb1PFcI0F05No/test_YWNjdF8xU25KYjFQRmNJMEYwNU5vLF9UblFTdWtyOUJWNzhXZHZsaE5XWEhEanZDV1NWdzZTLDE1OTAyMDcwMw0200ywMeZTYQ?s=ap",
+    "invoice_pdf": "https://pay.stripe.com/invoice/acct_1SnJb1PFcI0F05No/test_YWNjdF8xU25KYjFQRmNJMEYwNU5vLF9UblFTdWtyOUJWNzhXZHZsaE5XWEhEanZDV1NWdzZTLDE1OTAyMDcwMw0200ywMeZTYQ/pdf?s=ap",
+    "issuer": {
+      "type": "self"
+    },
+    "last_finalization_error": null,
+    "latest_revision": null,
+    "lines": {
+      "object": "list",
+      "data": [
+        {
+          "id": "il_1SppblPFcI0F05Nofq682KGH",
+          "object": "line_item",
+          "amount": 19800,
+          "currency": "thb",
+          "description": "1 × Monthly Card Reading Package (at ฿198.00 / month)",
+          "discount_amounts": [],
+          "discountable": true,
+          "discounts": [],
+          "invoice": "in_1SppblPFcI0F05No8GSpqwG4",
+          "livemode": false,
+          "metadata": {
+            "clerkUserId": "user_37M0EetovsIofuAZnDR2eAjmbtV",
+            "packageId": "cmkefc3250000dfi4kehf5d99",
+            "packageType": "MONTHLY",
+            "paymentId": "cmkff9taz0000ryi4synioe3t"
+          },
+          "parent": {
+            "invoice_item_details": null,
+            "subscription_item_details": {
+              "invoice_item": null,
+              "proration": false,
+              "proration_details": {
+                "credited_items": null
+              },
+              "subscription": "sub_1SppblPFcI0F05No1UD9nwqD",
+              "subscription_item": "si_TnQSrgdCfZBRjM"
+            },
+            "type": "subscription_item_details"
+          },
+          "period": {
+            "end": 1771158301,
+            "start": 1768479901
+          },
+          "pretax_credit_amounts": [],
+          "pricing": {
+            "price_details": {
+              "price": "price_1SpZuDPFcI0F05No0akAUH5f",
+              "product": "prod_TnAEOtLA1PusF8"
+            },
+            "type": "price_details",
+            "unit_amount_decimal": "19800"
+          },
+          "quantity": 1,
+          "subtotal": 19800,
+          "taxes": []
+        }
+      ],
+      "has_more": false,
+      "total_count": 1,
+      "url": "/v1/invoices/in_1SppblPFcI0F05No8GSpqwG4/lines"
+    },
+    "livemode": false,
+    "metadata": {},
+    "next_payment_attempt": null,
+    "number": "X6HIP7SF-0006",
+    "on_behalf_of": null,
+    "parent": {
+      "quote_details": null,
+      "subscription_details": {
+        "metadata": {
+          "clerkUserId": "user_37M0EetovsIofuAZnDR2eAjmbtV",
+          "packageId": "cmkefc3250000dfi4kehf5d99",
+          "packageType": "MONTHLY",
+          "paymentId": "cmkff9taz0000ryi4synioe3t"
+        },
+        "subscription": "sub_1SppblPFcI0F05No1UD9nwqD"
+      },
+      "type": "subscription_details"
+    },
+    "payment_settings": {
+      "default_mandate": null,
+      "payment_method_options": null,
+      "payment_method_types": [
+        "card"
+      ]
+    },
+    "period_end": 1768479901,
+    "period_start": 1768479901,
+    "post_payment_credit_notes_amount": 0,
+    "pre_payment_credit_notes_amount": 0,
+    "receipt_number": null,
+    "rendering": null,
+    "shipping_cost": null,
+    "shipping_details": null,
+    "starting_balance": 0,
+    "statement_descriptor": null,
+    "status": "open",
+    "status_transitions": {
+      "finalized_at": 1768479901,
+      "marked_uncollectible_at": null,
+      "paid_at": null,
+      "voided_at": null
+    },
+    "subtotal": 19800,
+    "subtotal_excluding_tax": 19800,
+    "test_clock": null,
+    "total": 19800,
+    "total_discount_amounts": [],
+    "total_excluding_tax": 19800,
+    "total_pretax_credit_amounts": [],
+    "total_taxes": [],
+    "webhooks_delivered_at": 1768479901
+  },
+  "livemode": false,
+  "metadata": {
+    "clerkUserId": "user_37M0EetovsIofuAZnDR2eAjmbtV",
+    "packageId": "cmkefc3250000dfi4kehf5d99",
+    "packageType": "MONTHLY",
+    "paymentId": "cmkff9taz0000ryi4synioe3t"
+  },
+  "next_pending_invoice_item_invoice": null,
+  "on_behalf_of": null,
+  "pause_collection": null,
+  "payment_settings": {
+    "payment_method_options": null,
+    "payment_method_types": [
+      "card"
+    ],
+    "save_default_payment_method": "off"
+  },
+  "pending_invoice_item_interval": null,
+  "pending_setup_intent": null,
+  "pending_update": null,
+  "plan": {
+    "id": "price_1SpZuDPFcI0F05No0akAUH5f",
+    "object": "plan",
+    "active": true,
+    "amount": 19800,
+    "amount_decimal": "19800",
+    "billing_scheme": "per_unit",
+    "created": 1768419541,
+    "currency": "thb",
+    "interval": "month",
+    "interval_count": 1,
+    "livemode": false,
+    "metadata": {
+      "packageType": "MONTHLY"
+    },
+    "meter": null,
+    "nickname": null,
+    "product": "prod_TnAEOtLA1PusF8",
+    "tiers_mode": null,
+    "transform_usage": null,
+    "trial_period_days": null,
+    "usage_type": "licensed"
+  },
+  "quantity": 1,
+  "schedule": null,
+  "start_date": 1768479901,
+  "status": "incomplete",
+  "test_clock": null,
+  "transfer_data": null,
+  "trial_end": null,
+  "trial_settings": {
+    "end_behavior": {
+      "missing_payment_method": "create_invoice"
+    }
+  },
+  "trial_start": null
+}
