@@ -7,6 +7,7 @@ import { PrismaModule } from '@/src/prisma/prisma.module';
 import { HealthModule } from '@/src/health/health.module';
 import { validationSchema } from '@/src/config/validation-schema';
 import { TestingModule } from './testing/testing.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { TestingModule } from './testing/testing.module';
     AuthModule,
     HealthModule,
     TestingModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
