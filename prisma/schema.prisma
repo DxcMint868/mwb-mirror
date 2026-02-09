@@ -60,6 +60,7 @@ model Payment {
   paymentStatus  PaymentStatus   @default(PENDING) @map("payment_status")
   createdAt      DateTime        @default(now()) @map("created_at")
   updatedAt      DateTime        @updatedAt @map("updated_at")
+  card_details   Json?
   user           User            @relation(fields: [clerkUserId], references: [clerkUserId], onDelete: Cascade)
   subscriptions  Subscription[]
   tokenPurchases TokenPurchase[]
@@ -68,25 +69,26 @@ model Payment {
 }
 
 model Subscription {
-  id                     String          @id @default(cuid())
-  packageId              String          @map("package_id")
-  clerkUserId            String          @map("clerk_user_id")
-  paymentProvider        PaymentProvider @map("payment_provider")
-  providerSubscriptionId String?         @map("provider_subscription_id")
-  providerMetadata       Json?           @map("provider_metadata")
-  startTime              DateTime        @map("start_time")
-  endTime                DateTime        @map("end_time")
-  isAutoRenew            Boolean         @default(false) @map("auto_renew")
-  pricePaidThb           Decimal         @map("price_paid_thb")
-  paymentId              String          @map("payment_id")
-  createdAt              DateTime        @default(now()) @map("created_at")
-  updatedAt              DateTime        @updatedAt @map("updated_at")
-  autoRenewDisabledAt    DateTime?       @map("auto_renew_disabled_at")
-  is_voided              Boolean         @default(false)
-  voided_at              DateTime?
-  user                   User            @relation(fields: [clerkUserId], references: [clerkUserId], onDelete: Cascade)
-  package                Package         @relation(fields: [packageId], references: [id])
-  payment                Payment         @relation(fields: [paymentId], references: [id])
+  id                      String          @id @default(cuid())
+  packageId               String          @map("package_id")
+  clerkUserId             String          @map("clerk_user_id")
+  paymentProvider         PaymentProvider @map("payment_provider")
+  providerSubscriptionId  String?         @map("provider_subscription_id")
+  providerMetadata        Json?           @map("provider_metadata")
+  startTime               DateTime        @map("start_time")
+  endTime                 DateTime        @map("end_time")
+  isAutoRenew             Boolean         @default(false) @map("auto_renew")
+  pricePaidThb            Decimal         @map("price_paid_thb")
+  paymentId               String          @map("payment_id")
+  createdAt               DateTime        @default(now()) @map("created_at")
+  updatedAt               DateTime        @updatedAt @map("updated_at")
+  autoRenewDisabledAt     DateTime?       @map("auto_renew_disabled_at")
+  is_voided               Boolean         @default(false)
+  voided_at               DateTime?
+  auto_renew_card_details Json?
+  user                    User            @relation(fields: [clerkUserId], references: [clerkUserId], onDelete: Cascade)
+  package                 Package         @relation(fields: [packageId], references: [id])
+  payment                 Payment         @relation(fields: [paymentId], references: [id])
 
   @@unique([clerkUserId, packageId])
   @@unique([paymentProvider, providerSubscriptionId])
@@ -122,15 +124,14 @@ model SavedCard {
 }
 
 model Artist {
-  id          String    @id @default(cuid())
-  fullName    String    @map("full_name")
-  avatarUrl   String?   @map("avatar_url")
-  description String?   @map("description")
-  specialties String[]
-  createdAt   DateTime  @default(now()) @map("created_at")
-  updatedAt   DateTime  @updatedAt @map("updated_at")
-  arts        Art[]
-  products    Product[]
+  id             String           @id @default(cuid())
+  fullName       String           @map("full_name")
+  avatarUrl      String?          @map("avatar_url")
+  createdAt      DateTime         @default(now()) @map("created_at")
+  updatedAt      DateTime         @updatedAt @map("updated_at")
+  arts           Art[]
+  artist_content artist_content[]
+  products       Product[]
 
   @@map("artist")
 }
@@ -198,6 +199,19 @@ model ProductContent {
 
   @@unique([languageCode, productId])
   @@map("product_content")
+}
+
+model artist_content {
+  id            String   @id
+  artist_id     String
+  language_code String
+  specialties   String[]
+  description   String?
+  created_at    DateTime @default(now())
+  updated_at    DateTime
+  artist        Artist   @relation(fields: [artist_id], references: [id])
+
+  @@unique([language_code, artist_id])
 }
 
 enum PaymentProvider {
